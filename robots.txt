@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://https/haseeb.dev/sitemap/sitemap-index.xml
+Host: https://https
