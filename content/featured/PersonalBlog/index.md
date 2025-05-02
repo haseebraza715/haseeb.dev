@@ -2,7 +2,7 @@
 date: '3'
 title: 'Personal Blog'
 cover: './pb.png'
-github: 'https://github.com/haseebra715/Personal_Blog'
+github: 'https://github.com/haseebraza715/Personal_Blog'
 external: 'https://personal-blog-wrrq.onrender.com/'
 tech:
   - Flask
