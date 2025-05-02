@@ -1,10 +1,5 @@
-Here is your fully updated `README.md` rewritten for **Haseeb Raza**, with all references to `haseeb.dev` replaced and branding, links, and wording aligned with your current project:
-
----
-
-````md
 <div align="center">
-  <img alt="Logo" src="https://github.com/haseebraza715/haseeb.dev/blob/main/static/logo.svg" width="100" />
+  <img alt="Logo" src="./static/logo.svg" width="100" />
 </div>
 
 <h1 align="center">
@@ -12,44 +7,65 @@ Here is your fully updated `README.md` rewritten for **Haseeb Raza**, with all r
 </h1>
 
 <p align="center">
-  Personal portfolio website, built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and hosted on <a href="https://www.netlify.com/" target="_blank">Netlify</a>.
+  Personal portfolio website built with <a href="https://www.gatsbyjs.com/" target="_blank">Gatsby</a> and hosted on <a href="https://www.netlify.com/" target="_blank">Netlify</a>.
 </p>
 
 <p align="center">
   <a href="https://app.netlify.com/sites/haseeb/deploys" target="_blank">
-    <img src="https://api.netlify.com/api/v1/badges/YOUR-BADGE-ID/deploy-status" alt="Netlify Status" />
+    <img src="https://api.netlify.com/api/v1/badges/<your-netlify-badge-id>/deploy-status" alt="Netlify Status" />
   </a>
 </p>
 
-![demo](./src/images/demo.png)
+![Demo](./src/images/og.png)
 
 ---
 
-## 🛠 Installation & Set Up
+## 📖 Table of Contents
+
+- [About](#-about)
+- [Installation & Setup](#-installation--setup)
+- [Building for Production](#-building-and-running-for-production)
+- [Inspiration](#-inspiration)
+- [License](#-license)
+
+---
+
+## 📌 About
+
+This is the personal portfolio of **Haseeb Raza**, showcasing selected projects, resume, and contact information. It is designed for developers, designers, and recruiters to explore Haseeb's skills and work.
+
+---
+
+## 🛠 Installation & Setup
+
+Follow these steps to set up the project locally:
 
 1. **Install the Gatsby CLI**
 
-   ```sh
+   ```bash
    npm install -g gatsby-cli
-````
-
-2. **Install and use the correct version of Node using [NVM](https://github.com/nvm-sh/nvm)**
-
-   ```sh
-   nvm install
    ```
 
-3. **Install dependencies**
+2. **Install and use the correct Node.js version with [NVM](https://github.com/nvm-sh/nvm)**
 
-   ```sh
-   yarn
+   ```bash
+   nvm install
+   nvm use
+   ```
+
+3. **Install project dependencies**
+
+   ```bash
+   yarn install
    ```
 
 4. **Start the development server**
 
-   ```sh
+   ```bash
    npm start
    ```
+
+   The site will be available at `http://localhost:8000`.
 
 ---
 
@@ -57,27 +73,26 @@ Here is your fully updated `README.md` rewritten for **Haseeb Raza**, with all r
 
 1. **Generate a full static production build**
 
-   ```sh
+   ```bash
    npm run build
    ```
 
-2. **Preview the site as it will appear once deployed**
+2. **Preview the production build locally**
 
-   ```sh
+   ```bash
    npm run serve
    ```
 
----
-
-## 📌 About
-
-This is the personal portfolio of **Haseeb Raza**, showcasing selected projects, resume access, and contact information.
-Built for developers, designers, and recruiters looking to explore Haseeb's work.
+   The preview will be available at `http://localhost:9000`.
 
 ---
 
-### 🎨 Inspiration
+## 🎨 Inspiration
 
-Design inspired by [brittanychiang.com](https://brittanychiang.com), restructured with a personalized theme and layout.
+The design is inspired by [brittanychiang.com](https://brittanychiang.com), restructured with a personalized theme and layout to reflect Haseeb's style.
 
+---
 
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).
