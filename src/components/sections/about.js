@@ -5,109 +5,110 @@ import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
 
-// Keep your imports as is
-
 const StyledAboutSection = styled.section`
-  max-width: 1000px;
-  padding: 60px 20px;
-  margin: 0 auto;
+  max-width: 900px;
 
   .inner {
     display: grid;
     grid-template-columns: 3fr 2fr;
-    gap: 50px;
+    grid-gap: 50px;
 
     @media (max-width: 768px) {
-      grid-template-columns: 1fr;
+      display: block;
     }
   }
 `;
-
 const StyledText = styled.div`
-  p {
-    margin-bottom: 15px;
-    line-height: 1.6;
-    font-size: var(--fz-lg);
-    color: var(--light-slate);
-  }
-
-  a {
-    color: var(--mimir-green);
-    text-decoration: none;
-    font-weight: 600;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
   ul.skills-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 200px));
-    gap: 10px 20px;
+    grid-template-columns: repeat(2, minmax(140px, 200px));
+    grid-gap: 0 10px;
     padding: 0;
-    margin-top: 30px;
+    margin: 20px 0 0 0;
+    overflow: hidden;
     list-style: none;
 
     li {
       position: relative;
+      margin-bottom: 10px;
       padding-left: 20px;
       font-family: var(--font-mono);
-      font-size: var(--fz-sm);
-      color: var(--lightest-slate);
+      font-size: var(--fz-xs);
 
       &:before {
         content: '▹';
         position: absolute;
         left: 0;
-        color: var(--mimir-green);
+        color: var(--lightest-mimir-green);
         font-size: var(--fz-sm);
         line-height: 12px;
       }
     }
   }
 `;
-
 const StyledPic = styled.div`
   position: relative;
   max-width: 300px;
-  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    margin: 50px auto 0;
+    width: 70%;
+  }
 
   .wrapper {
     ${({ theme }) => theme.mixins.boxShadow};
+    display: block;
     position: relative;
+    width: 100%;
     border-radius: var(--border-radius);
-    overflow: hidden;
+    //background-color: var(--lightest-mimir-green);
     background-color: white;
-    transition: transform 0.3s ease;
+    &:hover,
+    &:focus {
+      outline: 0;
 
-    &:hover {
-      transform: scale(1.03);
+      &:after {
+        top: 15px;
+        left: 15px;
+      }
 
       .img {
-        filter: grayscale(0%);
+        filter: none;
         mix-blend-mode: normal;
       }
     }
 
     .img {
+      position: relative;
       border-radius: var(--border-radius);
       mix-blend-mode: multiply;
       filter: grayscale(100%) contrast(1);
       transition: var(--transition);
     }
 
+    &:before,
     &:after {
       content: '';
+      display: block;
       position: absolute;
-      top: 20px;
-      left: 20px;
       width: 100%;
       height: 100%;
-      border: 2px solid var(--lightest-mimir-green);
       border-radius: var(--border-radius);
-      z-index: -1;
       transition: var(--transition);
+    }
+
+    &:before {
+      top: 0;
+      left: 0;
+      background-color: var(--mimir-green);
+      mix-blend-mode: screen;
+    }
+
+    &:after {
+      border: 2px solid var(--lightest-mimir-green);
+      top: 20px;
+      left: 20px;
+      z-index: -1;
     }
   }
 `;
