@@ -61,7 +61,7 @@ const StyledProject = styled.li`
       .project-inner {
         transform: translateY(-7px);
         background-color: var(--mimir-green-tint);
-      }  
+      }
     }
   }
 
@@ -71,24 +71,18 @@ const StyledProject = styled.li`
   }
 
   .project-inner {
-  ${({ theme }) => theme.mixins.boxShadow};
-  ${({ theme }) => theme.mixins.flexBetween};
-  flex-direction: column;
-  align-items: flex-start;
-  position: relative;
-  height: 100%;
-  padding: 2rem 1.75rem;
-  border-radius: var(--border-radius);
-  background-color: var(--dark-mimir-green-og);
-  transition: var(--transition);
-  overflow: auto;
-
-  ${StyledProject}:hover &,
-  ${StyledProject}:focus-within & {
-    background-color: var(--mimir-green-tint); /* ✅ This will now override correctly */
+    ${({ theme }) => theme.mixins.boxShadow};
+    ${({ theme }) => theme.mixins.flexBetween};
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    height: 100%;
+    padding: 2rem 1.75rem;
+    border-radius: var(--border-radius);
+    background-color: var(--dark-mimir-green-og);
+    transition: var(--transition);
+    overflow: auto;
   }
-}
-
 
   .project-top {
     ${({ theme }) => theme.mixins.flexBetween};
