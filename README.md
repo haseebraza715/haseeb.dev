@@ -10,11 +10,6 @@
   Personal portfolio website built with <a href="https://www.gatsbyjs.com/" target="_blank">Gatsby</a> and hosted on <a href="https://www.netlify.com/" target="_blank">Netlify</a>.
 </p>
 
-<p align="center">
-  <a href="https://app.netlify.com/sites/haseeb/deploys" target="_blank">
-    <img src="https://api.netlify.com/api/v1/badges/<your-netlify-badge-id>/deploy-status" alt="Netlify Status" />
-  </a>
-</p>
 
 ![Demo](./src/images/og.png)
 
@@ -89,7 +84,7 @@ Follow these steps to set up the project locally:
 
 ## 🎨 Inspiration
 
-The design is inspired by [brittanychiang.com](https://brittanychiang.com), restructured with a personalized theme and layout to reflect Haseeb's style.
+The design is inspired by [brittanychiang.com](https://brittanychiang.com), restructured with a personalized theme and layout.
 
 ---
 
