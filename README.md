@@ -1,8 +1,4 @@
-Here is your fully updated `README.md` rewritten for **Haseeb Raza**, with all references to `haseeb.dev` replaced and branding, links, and wording aligned with your current project:
 
----
-
-````md
 <div align="center">
   <img alt="Logo" src="https://github.com/haseebraza715/haseeb.dev/blob/main/static/logo.svg" width="100" />
 </div>
@@ -21,7 +17,7 @@ Here is your fully updated `README.md` rewritten for **Haseeb Raza**, with all r
   </a>
 </p>
 
-![demo](./src/images/demo.png)
+![demo](./src/images/og.png)
 
 ---
 
