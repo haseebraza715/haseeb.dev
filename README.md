@@ -84,7 +84,7 @@ Follow these steps to set up the project locally:
 
 ## 🎨 Inspiration
 
-The design is inspired by [brittanychiang.com](https://brittanychiang.com), restructured with a personalized theme and layout to reflect Haseeb's style.
+The design is inspired by [brittanychiang.com](https://brittanychiang.com), restructured with a personalized theme and layout.
 
 ---
 
