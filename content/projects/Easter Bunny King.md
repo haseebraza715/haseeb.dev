@@ -4,8 +4,10 @@ title: 'Easter Bunny King'
 github: 'https://github.com/haseebraza715/Easter-Bunny-king'
 tech:
   - C
+  - Process Management
+  - Signals & Pipes
   - File I/O
   - Linux-Compatible
 ---
 
-🐰 A playful C program that brings spring to life by letting you manage a bunny poetry contest, where each fluffy contestant competes to become the Easter Bunny King. Users can register bunnies with their poems, track egg counts, and update or delete entries — all through a simple command-line interface with file-based storage on Linux systems.
+🐰 A fun C-based command-line program that simulates a springtime bunny poetry contest! Bunny contestants register with their names and poems, then compete by "watering" — reciting poems to earn red eggs. Using Linux system calls (`fork`, `signal`, `pipe`), each child process sends egg counts to the parent, which updates a file-based leaderboard and declares the Easter Bunny King. All data is stored persistently, and the application supports full bunny management: add, list, modify, and delete.
