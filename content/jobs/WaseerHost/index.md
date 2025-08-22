@@ -3,7 +3,7 @@ date: '2020-01-01'
 title: 'Web Intern'
 company: 'WaseerHost'
 location: 'Kamalia, Pakistan'
-range: '2020 – 2022'
+range: '2022'
 url: 'https://waseerhost.com/'
 ---
 

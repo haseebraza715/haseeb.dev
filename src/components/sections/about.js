@@ -150,23 +150,24 @@ const About = () => {
       <div className="inner">
         <StyledText>
         <div>
-          <p>
-            I love building things that work beautifully—whether it’s a clean user interface or a well-structured backend. I'm driven by curiosity and the challenge of turning ideas into intuitive digital experiences that people actually enjoy using.
-          </p>
+        <p>
+  I love creating systems that not only work but feel seamless—whether it’s a clean, responsive interface or a robust, well-architected backend. Curiosity drives me, and I thrive on the challenge of turning ideas into intelligent digital solutions that people genuinely enjoy using.
+</p>
 
-          <p>
-            My journey began in 2020 during an internship at <a href="https://waseerhost.com" target="_blank">WaseerHost</a>, where I crafted responsive, SEO-friendly websites and got my first real taste of web development. That experience led me to pursue Computer Science at <a href="https://www.elte.hu/en" target="_blank">Eötvös Loránd University (ELTE)</a> in Budapest, where I continued exploring full-stack development, systems thinking, and software design.
-          </p>
+<p>
+  My journey started in 2022 with an internship at <a href="https://waseerhost.com" target="_blank">WaseerHost</a>, where I built responsive, SEO-friendly websites and got my first real taste of development in practice. That experience inspired me to pursue Computer Science at <a href="https://www.elte.hu/en" target="_blank">Eötvös Loránd University (ELTE)</a> in Budapest, where I’ve since expanded my focus to software engineering, backend systems, and applied AI.
+</p>
 
-          <p>
-            Since then, I’ve worked with tools like React, Laravel, Flask, and MongoDB and more—building everything from learning platforms to smart utilities. I'm especially focused on writing clean code, designing smooth user flows, and learning how modern infrastructure (like Docker and cloud services) powers great products.
-          </p>
+<p>
+  Since then, I’ve worked with technologies like React, Laravel, Flask, and MongoDB—building projects ranging from learning platforms to intelligent assistants. Alongside development, I’ve explored containerization, cloud-based workflows, and scalable architectures, with growing research interests in artificial intelligence and machine learning.
+</p>
 
-          <p>
-            I enjoy solving real problems, collaborating with curious minds, and constantly growing through hands-on development and experimentation.
-          </p>
+<p>
+  I enjoy solving real problems, collaborating with curious people, and continuously learning through hands-on experimentation, research, and building practical tools.
+</p>
 
-          <p>Here are a few technologies I’ve been working with or exploring recently:</p>
+<p>Here are a few technologies and areas I’ve been working with or exploring recently:</p>
+
         </div>
 
 

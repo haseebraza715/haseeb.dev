@@ -64,16 +64,14 @@ const Hero = () => {
   const four = (
     <>
     <p>
-      I'm a driven and passionate computer science student currently working toward my degree at{' '}
-      <a href="https://www.elte.hu/en" target="_blank" rel="noreferrer">
-        Eötvös Loránd University
-      </a>{' '}
-      in Budapest. I possess practical expertise in full-stack development, backend architectures and building AI apps. 
-      During my time as a Web Intern at{' '}
-      <a href="https://waseerhost.com/" target="_blank" rel="noreferrer">
-        WaseerHost
-      </a>, I built SEO-optimized websites and improved efficiency by implementing streamlined coding techniques.
-    </p>
+  I’m a motivated computer science student pursuing my degree at 
+  <a href="https://www.elte.hu/en" target="_blank" rel="noreferrer">
+    Eötvös Loránd University
+  </a> in Budapest, with a focus on advancing research in artificial intelligence and machine learning. 
+  My work explores how intelligent systems can be designed to go beyond simple execution, aiming for models that learn, adapt, and scale effectively.
+</p>
+
+
 
     </>
   );
