@@ -1,7 +1,7 @@
 ---
 date: '2020-01-01'
-title: 'Web Intern'
-company: 'WaseerHost'
+title: 'Frontend Developer'
+company: 'Creatik Solutions'
 location: 'Kamalia, Pakistan'
 range: '2022'
 url: 'https://waseerhost.com/'
