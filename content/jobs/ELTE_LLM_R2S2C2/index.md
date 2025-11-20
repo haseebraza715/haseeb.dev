@@ -4,7 +4,7 @@ title: 'Research Assistant'
 company: 'ELTE-RC2S2 (Research Center for Computational Social Science), Eötvös Loránd University'
 location: 'Budapest, Hungary'
 range: 'Sep 2025 - Present'
-url: 'https://www.elte.hu/en'
+url: 'https://rc2s2.elte.hu/en/home/'
 ---
 
 - Working as a researcher in ELTE-RC2S2, studying how users with different backgrounds receive varying responses from AI systems.

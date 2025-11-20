@@ -4,7 +4,7 @@ title: 'Founder & Lead'
 company: 'ELTE Data Science Club'
 location: 'Budapest, Hungary'
 range: 'Sep 2025 - Present'
-url: 'https://www.elte.hu/en'
+url: 'https://datasciencelte.netlify.app/'
 ---
 
 - Founding and leading the ELTE Data Science Club, building a community focused on practical data science, AI, and machine learning.

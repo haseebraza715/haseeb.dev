@@ -60,16 +60,10 @@ const Hero = () => {
 
   const one = <h1>Hi, my name is</h1>;
   const two = <h2 className="big-heading">Haseeb Raza.</h2>;
-  const three = <h3 className="big-heading">I build Web & AI apps.</h3>;
+  const three = <h3 className="big-heading">Build cool things with Web tech and AI.</h3>;
   const four = (
     <>
-    <p>
-  I’m a motivated computer science student pursuing my degree at 
-  <a href="https://www.elte.hu/en" target="_blank" rel="noreferrer">
-    Eötvös Loránd University
-  </a> in Budapest, with a focus on advancing research in artificial intelligence and machine learning. 
-  My work explores how intelligent systems can be designed to go beyond simple execution, aiming for models that learn, adapt, and scale effectively.
-</p>
+  <p> I’m a motivated computer science student currently studying at <a href="https://www.elte.hu/en" target="_blank" rel="noreferrer"> Eötvös Loránd University </a> in Budapest. I focus on advancing research in artificial intelligence and machine learning, with a particular interest in how intelligent systems can move beyond basic execution. My work explores models that can learn, adapt, and scale reliably, aiming to build systems that behave more autonomously and solve real-world problems effectively. </p>
 
 
 
