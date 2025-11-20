@@ -1,7 +1,7 @@
 ---
 date: '2025-07-01'
 title: 'Research Assistant'
-company: 'Department of Numerical Analysis, ELTE Faculty of Informatics'
+company: 'Department of Numerical Analysis, ELTE'
 location: 'Budapest, Hungary'
 range: 'July 2025 - Nov 2025'
 url: 'https://www.elte.hu/en'

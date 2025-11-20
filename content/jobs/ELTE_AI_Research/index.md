@@ -1,7 +1,7 @@
 ---
 date: '2025-07-01'
 title: 'Artificial Intelligence Researcher'
-company: 'Department of Artificial Intelligence, ELTE Faculty of Informatics'
+company: 'Department of Artificial Intelligence, ELTE'
 location: 'Budapest, Hungary'
 range: 'July 2025 - Present'
 url: 'https://www.elte.hu/en'

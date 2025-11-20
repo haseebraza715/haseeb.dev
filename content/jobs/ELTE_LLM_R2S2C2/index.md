@@ -1,7 +1,7 @@
 ---
 date: '2025-09-01'
 title: 'Research Assistant'
-company: 'ELTE-RC2S2 (Research Center for Computational Social Science), Eötvös Loránd University'
+company: 'ELTE-RC2S2'
 location: 'Budapest, Hungary'
 range: 'Sep 2025 - Present'
 url: 'https://rc2s2.elte.hu/en/home/'
