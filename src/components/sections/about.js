@@ -150,28 +150,25 @@ const About = () => {
       <div className="inner">
         <StyledText>
         <div>
+      
         <p>
-  I love creating systems that not only work but feel seamless—whether it’s a clean, responsive interface or a robust, well-architected backend. Curiosity drives me, and I thrive on the challenge of turning ideas into intelligent digital solutions that people genuinely enjoy using.
+  I like building systems that work reliably and are straightforward to use, whether that is a small web app, a backend service, or a tool that automates something repetitive.
 </p>
 
 <p>
-  My journey started in 2022 with an internship at <a href="https://waseerhost.com" target="_blank">WaseerHost</a>, where I built responsive, SEO-friendly websites and got my first real taste of development in practice. That experience inspired me to pursue Computer Science at <a href="https://www.elte.hu/en" target="_blank">Eötvös Loránd University (ELTE)</a> in Budapest, where I’ve since expanded my focus to software engineering, backend systems, and applied AI.
+  I study Computer Science at 
+  <a href="https://www.elte.hu/en" target="_blank">Eötvös Loránd University (ELTE)</a> in Budapest, where I focus on software engineering, data science, and applied AI. Most of my projects sit somewhere between backend development and data-heavy applications.
 </p>
 
 <p>
-  Since then, I’ve worked with technologies like React, Laravel, Flask, and MongoDB—building projects ranging from learning platforms to intelligent assistants. Alongside development, I’ve explored containerization, cloud-based workflows, and scalable architectures, with growing research interests in artificial intelligence and machine learning.
+  I have worked with technologies like React, Laravel, Flask, FastAPI, and MongoDB, and on the data side I use Python, pandas, NumPy, and scikit-learn for analysis and ML experiments. I have built things like learning platforms, small intelligent assistants, and tools that process and interpret real-world data.
 </p>
 
 <p>
-  I enjoy solving real problems, collaborating with curious people, and continuously learning through hands-on experimentation, research, and building practical tools.
+  I like clear problems, direct feedback, and building things that are actually used, not just nice to show in a presentation.
 </p>
-
+</div>
 <p>Here are a few technologies and areas I’ve been working with or exploring recently:</p>
-
-        </div>
-
-
-
 
           <ul className="skills-list">
             {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}

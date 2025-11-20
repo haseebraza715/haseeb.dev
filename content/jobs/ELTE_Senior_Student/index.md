@@ -1,7 +1,7 @@
 ---
 date: '2025-09-01'
 title: 'Senior Student'
-company: 'ELTE'
+company: 'ELTE Faculty of Informatics'
 location: 'Budapest, Hungary'
 range: 'September 2025 - Present'
 url: 'https://www.elte.hu/en'

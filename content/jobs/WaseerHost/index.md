@@ -2,7 +2,7 @@
 date: '2020-01-01'
 title: 'Frontend Developer'
 company: 'Creatik Solutions'
-location: 'Kamalia, Pakistan'
+location: 'Lahore, Pakistan'
 range: '2022'
 url: 'https://waseerhost.com/'
 ---
