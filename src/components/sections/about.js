@@ -156,8 +156,8 @@ const About = () => {
 </p>
 
 <p>
-  I study Computer Science at 
-  <a href="https://www.elte.hu/en" target="_blank">Eötvös Loránd University (ELTE)</a> in Budapest, where I focus on software engineering, data science, and applied AI. Most of my projects sit somewhere between backend development and data-heavy applications.
+  I study Computer Science at{' '}
+  <a href="https://www.elte.hu/en" target="_blank"> Eötvös Loránd University (ELTE)</a> in Budapest, where I focus on software engineering, data science, and applied AI. Most of my projects sit somewhere between backend development and data-heavy applications.
 </p>
 
 <p>

@@ -8,7 +8,9 @@ import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
 
 const StyledJobsSection = styled.section`
-  max-width: 700px;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
 
   .inner {
     display: flex;
@@ -32,37 +34,12 @@ const StyledTabList = styled.div`
   margin: 0;
   list-style: none;
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     display: flex;
-    overflow-x: auto;
-    width: calc(100% + 100px);
-    padding-left: 50px;
-    margin-left: -50px;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
     margin-bottom: 30px;
-  }
-  @media (max-width: 480px) {
-    width: calc(100% + 50px);
-    padding-left: 25px;
-    margin-left: -25px;
-  }
-
-  li {
-    &:first-of-type {
-      @media (max-width: 600px) {
-        margin-left: 50px;
-      }
-      @media (max-width: 480px) {
-        margin-left: 25px;
-      }
-    }
-    &:last-of-type {
-      @media (max-width: 600px) {
-        padding-right: 50px;
-      }
-      @media (max-width: 480px) {
-        padding-right: 25px;
-      }
-    }
   }
 `;
 
@@ -75,22 +52,32 @@ const StyledTabButton = styled.button`
   padding: 0 20px 2px;
   border-left: 2px solid var(--mimir-green);
   background-color: transparent;
-  color: ${({ isActive }) => (isActive ? 'var(--lightest-mimir-green)' : 'var(-mimir-green)')};
+  color: ${({ isActive }) => (isActive ? 'var(--lightest-mimir-green)' : 'var(--mimir-green)')};
   font-family: var(--font-mono);
   font-size: var(--fz-xs);
   text-align: left;
   white-space: nowrap;
 
   @media (max-width: 768px) {
-    padding: 0 15px 2px;
+    height: auto;
+    min-height: var(--tab-height);
+    padding: 12px 18px;
+    gap: 4px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    white-space: normal;
+    line-height: 1.4;
+    border-left: 2px solid var(--mimir-green);
   }
   @media (max-width: 600px) {
     ${({ theme }) => theme.mixins.flexCenter};
-    min-width: 120px;
-    padding: 0 15px;
-    border-left: 0;
-    border-bottom: 2px solid var(--lightest-mimir-green);
-    text-align: center;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 12px 18px;
+    border-left: 2px solid var(--mimir-green);
+    border-bottom: 0;
+    text-align: left;
   }
 
   &:hover,
@@ -112,17 +99,8 @@ const StyledHighlight = styled.div`
   transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition-delay: 0.1s;
 
-  @media (max-width: 600px) {
-    top: auto;
-    bottom: 0;
-    width: 100%;
-    max-width: var(--tab-width);
-    height: 2px;
-    margin-left: 50px;
-    transform: translateX(calc(${({ activeTabId }) => activeTabId} * var(--tab-width)));
-  }
-  @media (max-width: 480px) {
-    margin-left: 25px;
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 

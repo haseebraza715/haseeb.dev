@@ -9,8 +9,18 @@ const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
   min-height: 100vh;
-  padding: 0;
+  padding: 0 0 0 4px;
+
+  @media (max-width: 768px) {
+    min-height: auto;
+    padding: 100px 0 60px;
+  }
+
+  @media (max-width: 600px) {
+    padding: 80px 0 40px;
+  }
 
   @media (max-width: 480px) and (min-height: 700px) {
     padding-bottom: 10vh;
@@ -28,20 +38,55 @@ const StyledHeroSection = styled.section`
     }
   }
 
+  .big-heading {
+    font-size: clamp(40px, 8vw, 80px);
+    line-height: 1.1;
+  }
+
+  @media (max-width: 600px) {
+    .big-heading {
+      font-size: clamp(32px, 10vw, 64px);
+      line-height: 1.15;
+    }
+  }
+
   h3 {
     margin-top: 10px;
     color: var(--light-mimir-green);
-    line-height: 0.9;
+    line-height: 1.05;
+
+    @media (max-width: 600px) {
+      font-size: clamp(var(--fz-lg), 5vw, var(--fz-xl));
+      line-height: 1.2;
+    }
   }
 
   p {
     margin: 20px 0 0;
     max-width: 540px;
+    font-size: clamp(var(--fz-md), 3.2vw, var(--fz-lg));
+    line-height: 1.7;
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+    }
+
+    @media (min-width: 1024px) {
+      max-width: 620px;
+      font-size: var(--fz-xl);
+      line-height: 1.8;
+    }
   }
 
   .email-link {
     ${({ theme }) => theme.mixins.bigButton};
     margin-top: 50px;
+
+    @media (max-width: 600px) {
+      width: 100%;
+      text-align: center;
+      margin-top: 35px;
+    }
   }
 `;
 
@@ -63,7 +108,7 @@ const Hero = () => {
   const three = <h3 className="big-heading">Build cool things with Web tech and AI.</h3>;
   const four = (
     <>
-  <p> I’m a motivated computer science student currently studying at <a href="https://www.elte.hu/en" target="_blank" rel="noreferrer"> Eötvös Loránd University </a> in Budapest. I focus on advancing research in artificial intelligence and machine learning, with a particular interest in how intelligent systems can move beyond basic execution. My work explores models that can learn, adapt, and scale reliably, aiming to build systems that behave more autonomously and solve real-world problems effectively. </p>
+  <p> I’m a motivated computer science student currently studying at <a href="https://www.elte.hu/en" target="_blank" rel="noreferrer"> Eötvös Loránd University </a> in Budapest. I focus on advancing research in artificial intelligence and machine learning, with a particular interest in how intelligent systems can move beyond basic execution. My work explores models that can learn, adapt, and scale reliably</p>
 
 
 
