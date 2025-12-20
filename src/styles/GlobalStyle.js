@@ -21,15 +21,15 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-  background-color: rgba(180, 200, 240, 0.3); /* light soft blue */
-  color: inherit; /* keeps text color unchanged */
-}
+    background-color: var(--primary-tint);
+    color: var(--text-primary);
+  }
 
 
 
   /* Provide basic, default focus styles.*/
   :focus {
-    outline: 2px dashed var(--lightest-mimir-green);
+    outline: 2px dashed var(--primary);
     outline-offset: 3px;
   }
 
@@ -48,24 +48,24 @@ const GlobalStyle = createGlobalStyle`
     focus.
   */
   :focus-visible {
-    outline: 2px dashed var(--lightest-mimir-green);
+    outline: 2px dashed var(--primary);
     outline-offset: 3px;
   }
 
   /* Scrollbar Styles */
   html {
     scrollbar-width: thin;
-    scrollbar-color: var(--mimir-green) var(--dark-mimir-green);
+    scrollbar-color: var(--text-secondary) var(--bg-main);
   }
   ::-webkit-scrollbar {
     width: 12px;
   }
   ::-webkit-scrollbar-track {
-    background: var(--dark-mimir-green);
+    background: var(--bg-main);
   }
   ::-webkit-scrollbar-thumb {
-    background-color: var(--mimir-green);
-    border: 3px solid var(--dark-mimir-green);
+    background-color: var(--text-secondary);
+    border: 3px solid var(--bg-main);
     border-radius: 10px;
   }
 
@@ -76,14 +76,17 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background-color: var(--dark-mimir-green);
-    color: var(--light-mimir-green);
+    text-rendering: optimizeLegibility;
+    background-color: var(--bg-main);
+    color: var(--text-secondary);
     font-family: var(--font-sans);
-    font-size: var(--fz-xl);
-    line-height: 1.3;
+    font-size: clamp(16px, 1vw + 0.5rem, 18px);
+    line-height: 1.7;
+    font-weight: 400;
 
     @media (max-width: 480px) {
-      font-size: var(--fz-lg);
+      font-size: clamp(14px, 3vw, 16px);
+      line-height: 1.5;
     }
 
     &.hidden {
@@ -118,26 +121,32 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     max-width: 1600px;
     min-height: 100vh;
-    padding: 200px 150px;
+    padding: 100px 80px;
 
+    @media (max-width: 1200px) {
+      padding: 100px 60px;
+    }
     @media (max-width: 1080px) {
-      padding: 200px 100px;
+      padding: 90px 50px;
     }
     @media (max-width: 768px) {
-      padding: 150px 50px;
+      padding: 80px 40px;
     }
     @media (max-width: 480px) {
-      padding: 125px 25px;
+      padding: 70px 25px;
     }
 
     &.fillHeight {
-      padding: 0 150px;
+      padding: 0 80px;
 
+      @media (max-width: 1200px) {
+        padding: 0 60px;
+      }
       @media (max-width: 1080px) {
-        padding: 0 100px;
+        padding: 0 50px;
       }
       @media (max-width: 768px) {
-        padding: 0 50px;
+        padding: 0 40px;
       }
       @media (max-width: 480px) {
         padding: 0 25px;
@@ -147,15 +156,15 @@ const GlobalStyle = createGlobalStyle`
 
   section {
     margin: 0 auto;
-    padding: 100px 0;
+    padding: 60px 0;
     max-width: 1000px;
 
     @media (max-width: 768px) {
-      padding: 80px 0;
+      padding: 50px 0;
     }
 
     @media (max-width: 480px) {
-      padding: 60px 0;
+      padding: 40px 0;
     }
   }
 
@@ -167,24 +176,31 @@ const GlobalStyle = createGlobalStyle`
   h6 {
     margin: 0 0 10px 0;
     font-weight: 600;
-    color: var(--lightest-mimir-green);
-    line-height: 1.1;
+    color: var(--text-primary);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
   }
 
   .big-heading {
     margin: 0;
     font-size: clamp(40px, 8vw, 80px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
   }
 
   .big-heading-archive {
     margin: 0;
     font-size: clamp(40px, 8vw, 80px);
-    color: var(--ligh-mimir-green);
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: -0.03em;
   }
 
   .medium-heading {
     margin: 0;
-    font-size: clamp(40px, 8vw, 60px);
+    font-size: clamp(32px, 6vw, 60px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
   }
 
   .numbered-heading {
@@ -193,9 +209,10 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
     margin: 10px 0 40px;
     width: 100%;
-    font-size: clamp(26px, 5vw, var(--fz-heading));
+    font-size: clamp(22px, 4vw, var(--fz-heading));
     white-space: nowrap;
-    color: var(--light-mimir-green);
+    color: var(--text-primary);
+    font-weight: 600;
 
     &:before {
       position: relative;
@@ -203,7 +220,7 @@ const GlobalStyle = createGlobalStyle`
       counter-increment: section;
       content: '0' counter(section) '.';
       margin-right: 10px;
-      color: var(--lightest-mimir-green);
+      color: var(--primary);
       font-family: var(--font-mono);
       font-size: clamp(var(--fz-md), 3vw, var(--fz-xl));
       font-weight: 400;
@@ -222,7 +239,7 @@ const GlobalStyle = createGlobalStyle`
       width: 300px;
       height: 1px;
       margin-left: 20px;
-      background-color: var(--mimir-green);
+      background-color: var(--bg-elevated);
 
       @media (max-width: 1080px) {
         width: 200px;
@@ -267,10 +284,17 @@ const GlobalStyle = createGlobalStyle`
     color: inherit;
     position: relative;
     transition: var(--transition);
+    cursor: pointer;
 
     &:hover,
     &:focus {
-      color: var(--lightest-mimir-green);
+      color: var(--primary);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 3px;
+      border-radius: 2px;
     }
 
     &.inline-link {
@@ -286,25 +310,38 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
     border: 0;
     border-radius: 0;
+    min-height: 44px;
+    
+    &:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
   }
 
   input, textarea {
     border-radius: 0;
     outline: 0;
+    font-size: 16px; /* Prevents zoom on iOS */
 
     &:focus {
       outline: 0;
     }
     &:focus,
     &:active {
-      &::placeholder {
-        opacity: 0.5;
-      }
+      outline: 0;
+    }
+    
+    &:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
     }
   }
 
   p {
     margin: 0 0 15px 0;
+    max-width: 65ch;
+    line-height: 1.7;
 
     &:last-child,
     &:last-of-type {
@@ -316,10 +353,10 @@ const GlobalStyle = createGlobalStyle`
     }
 
     & > code {
-      background-color: var(--light-navy);
-      color: var(--white);
+      background-color: var(--bg-elevated);
+      color: var(--text-primary);
       font-size: var(--fz-sm);
-      border-radius: var(--border-radius);
+      border-radius: 3px;
       padding: 0.3em 0.5em;
     }
   }
@@ -338,14 +375,14 @@ const GlobalStyle = createGlobalStyle`
           content: '▹';
           position: absolute;
           left: 0;
-          color: var(--lightest-mimir-green);
+          color: var(--primary);
         }
       }
     }
   }
 
   blockquote {
-    border-left-color: var(--lightest-mimir-green);
+    border-left-color: var(--primary);
     border-left-style: solid;
     border-left-width: 1px;
     margin-left: 0px;
@@ -359,7 +396,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   hr {
-    background-color: var(--lightest-navy);
+    background-color: var(--bg-elevated);
     height: 1px;
     border-width: 0px;
     border-style: initial;
@@ -385,8 +422,8 @@ const GlobalStyle = createGlobalStyle`
 
     &:focus,
     &:active {
-      background-color: var(--lightest-mimir-green);
-      color: var(--navy);
+      background-color: var(--primary);
+      color: var(--bg-main);
       top: 0;
       left: 0;
       width: auto;
@@ -397,18 +434,18 @@ const GlobalStyle = createGlobalStyle`
   }
 
   #logo {
-    color: var(--lightest-mimir-green);
+    color: var(--primary);
   }
 
   .overline {
-    color: var(--lightest-mimir-green);
+    color: var(--primary);
     font-family: var(--font-mono);
     font-size: var(--fz-md);
     font-weight: 400;
   }
 
   .subtitle {
-    color: var(--lightest-mimir-green);
+    color: var(--primary);
     margin: 0 0 20px 0;
     font-size: var(--fz-md);
     font-family: var(--font-mono);
@@ -431,7 +468,7 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     align-items: center;
     margin-bottom: 50px;
-    color: var(--lightest-mimir-green);
+    color: var(--primary);
 
     .arrow {
       display: block;

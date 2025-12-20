@@ -8,8 +8,7 @@ import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
 
 const StyledJobsSection = styled.section`
-  width: 100%;
-  max-width: 960px;
+  max-width: 900px;
   margin: 0 auto;
 
   .inner {
@@ -17,11 +16,6 @@ const StyledJobsSection = styled.section`
 
     @media (max-width: 600px) {
       display: block;
-    }
-
-    // Prevent container from jumping
-    @media (min-width: 700px) {
-      min-height: 340px;
     }
   }
 `;
@@ -34,11 +28,12 @@ const StyledTabList = styled.div`
   margin: 0;
   list-style: none;
 
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
+    overflow-x: auto;
+    width: calc(100% + 20px);
+    padding-left: 20px;
+    margin-left: -20px;
     margin-bottom: 30px;
   }
 `;
@@ -48,41 +43,34 @@ const StyledTabButton = styled.button`
   display: flex;
   align-items: center;
   width: 100%;
-  height: var(--tab-height);
+  height: 42px;
   padding: 0 20px 2px;
-  border-left: 2px solid var(--mimir-green);
+  border-left: 2px solid var(--lightest-navy);
   background-color: transparent;
-  color: ${({ isActive }) => (isActive ? 'var(--lightest-mimir-green)' : 'var(--mimir-green)')};
+  color: ${({ isActive }) => (isActive ? 'var(--green)' : 'var(--slate)')};
   font-family: var(--font-mono);
   font-size: var(--fz-xs);
   text-align: left;
   white-space: nowrap;
 
   @media (max-width: 768px) {
-    height: auto;
-    min-height: var(--tab-height);
-    padding: 12px 18px;
-    gap: 4px;
-    justify-content: flex-start;
-    align-items: flex-start;
-    white-space: normal;
-    line-height: 1.4;
-    border-left: 2px solid var(--mimir-green);
+    padding: 0 15px 2px;
   }
+
   @media (max-width: 600px) {
     ${({ theme }) => theme.mixins.flexCenter};
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    padding: 12px 18px;
-    border-left: 2px solid var(--mimir-green);
-    border-bottom: 0;
-    text-align: left;
+    min-width: 120px;
+    padding: 0 15px;
+    border-left: 0;
+    border-bottom: 2px solid ${({ isActive }) => (isActive ? 'var(--primary)' : 'var(--lightest-navy)')};
+    text-align: center;
+    flex-shrink: 0; // Prevent shrinking/overlapping
+    color: ${({ isActive }) => (isActive ? 'var(--primary)' : 'var(--slate)')};
   }
 
   &:hover,
   &:focus {
-    background-color: var(--dark-mimir-green-og);
+    background-color: var(--light-navy);
   }
 `;
 
@@ -92,22 +80,22 @@ const StyledHighlight = styled.div`
   left: 0;
   z-index: 10;
   width: 2px;
-  height: var(--tab-height);
+  height: 42px;
   border-radius: var(--border-radius);
-  background: var(--lightest-mimir-green);
-  transform: translateY(calc(${({ activeTabId }) => activeTabId} * var(--tab-height)));
+  background: var(--green);
+  transform: translateY(calc(${({ activeTabId }) => activeTabId} * 42px));
   transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition-delay: 0.1s;
 
-  @media (max-width: 768px) {
-    display: none;
+  @media (max-width: 600px) {
+    display: none; // Hide on mobile to prevent overlapping/misalignment issues
   }
 `;
 
 const StyledTabPanels = styled.div`
   position: relative;
   width: 100%;
-  margin-left: 20px;
+  margin-left: 30px;
 
   @media (max-width: 600px) {
     margin-left: 0;
@@ -121,6 +109,11 @@ const StyledTabPanel = styled.div`
 
   ul {
     ${({ theme }) => theme.mixins.fancyList};
+    
+    // Show only first 3 items
+    li:nth-child(n+4) {
+      display: none;
+    }
   }
 
   h3 {
@@ -128,16 +121,36 @@ const StyledTabPanel = styled.div`
     font-size: var(--fz-xxl);
     font-weight: 500;
     line-height: 1.3;
-    color: var(--lightest-mimir-green);
 
     .company {
-      color: var(--light-mimir-green) !important;
+      margin-left: 10px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background-color: var(--light-navy);
+      color: var(--primary);
+      font-size: var(--fz-md);
+      font-weight: 500;
+      transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+      
+      a {
+        color: inherit;
+        text-decoration: none;
+        
+        &::after {
+            display: none;
+        }
+      }
+
+      &:hover {
+        background-color: var(--primary-tint);
+        transform: translateY(-2px);
+      }
     }
   }
 
   .range {
     margin-bottom: 25px;
-    color: var(--mimir-white);
+    color: var(--light-slate);
     font-family: var(--font-mono);
     font-size: var(--fz-xs);
   }
@@ -203,13 +216,15 @@ const Jobs = () => {
   // Focus on tabs when using up & down arrow keys
   const onKeyDown = e => {
     switch (e.key) {
-      case KEY_CODES.ARROW_UP: {
+      case KEY_CODES.ARROW_UP:
+      case KEY_CODES.ARROW_LEFT: {
         e.preventDefault();
         setTabFocus(tabFocus - 1);
         break;
       }
 
-      case KEY_CODES.ARROW_DOWN: {
+      case KEY_CODES.ARROW_DOWN:
+      case KEY_CODES.ARROW_RIGHT: {
         e.preventDefault();
         setTabFocus(tabFocus + 1);
         break;
@@ -267,7 +282,7 @@ const Jobs = () => {
                       <span>{title}</span>
                       <span className="company">
                         &nbsp;@&nbsp;
-                        <a href={url} className="inline-company-link" >
+                        <a href={url} className="inline-company-link">
                           {company}
                         </a>
                       </span>

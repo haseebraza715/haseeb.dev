@@ -8,9 +8,10 @@ const StyledFooter = styled.footer`
   ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
   height: auto;
-  min-height: 70px;
-  padding: 15px;
+  min-height: 50px;
+  padding: 30px 15px 20px;
   text-align: center;
+  margin-top: 20px;
 `;
 
 const StyledSocialLinks = styled.div`
@@ -41,13 +42,19 @@ const StyledSocialLinks = styled.div`
 `;
 
 const StyledCredit = styled.div`
-  color: var(--mimir-white);
+  color: var(--text-tertiary);
   font-family: var(--font-mono);
   font-size: var(--fz-xxs);
-  line-height: 1;
+  line-height: 1.5;
 
   a {
-    padding: 10px;
+    padding: 0 4px;
+    color: var(--primary);
+    transition: var(--transition);
+    
+    &:hover {
+      color: var(--primary-dark);
+    }
   }
 
   .github-stats {
@@ -106,7 +113,7 @@ const Footer = () => {
 
       <StyledCredit tabindex="-1">
         <div>
-          Developed by<a href="https://github.com/haseebraza715">Haseeb Raza</a>, with inspiration from
+          Developed by <a href="https://github.com/haseebraza715">Haseeb Raza</a>, with inspiration from{' '}
           <a href="https://github.com/bchiang7/v4">Brittany Chiang</a>
         </div>
 

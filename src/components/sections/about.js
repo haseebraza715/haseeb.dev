@@ -13,6 +13,10 @@ const StyledAboutSection = styled.section`
     grid-template-columns: 3fr 2fr;
     grid-gap: 50px;
 
+    @media (max-width: 1024px) {
+      grid-gap: 30px;
+    }
+
     @media (max-width: 768px) {
       display: block;
     }
@@ -20,32 +24,33 @@ const StyledAboutSection = styled.section`
 `;
 const StyledText = styled.div`
   ul.skills-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(140px, 200px));
-    grid-gap: 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
     padding: 0;
     margin: 20px 0 0 0;
-    overflow: hidden;
     list-style: none;
 
     li {
       position: relative;
-      margin-bottom: 10px;
-      padding-left: 20px;
+      padding: 6px 14px;
       font-family: var(--font-mono);
       font-size: var(--fz-xs);
+      background: rgba(16, 185, 129, 0.1);
+      color: var(--primary);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      border-radius: 20px;
+      transition: all 0.2s ease;
+      cursor: default;
 
-      &:before {
-        content: '▹';
-        position: absolute;
-        left: 0;
-        color: var(--lightest-mimir-green);
-        font-size: var(--fz-sm);
-        line-height: 12px;
+      &:hover {
+        background: rgba(16, 185, 129, 0.2);
+        transform: translateY(-2px);
       }
     }
   }
 `;
+
 const StyledPic = styled.div`
   position: relative;
   max-width: 300px;
@@ -56,59 +61,57 @@ const StyledPic = styled.div`
   }
 
   .wrapper {
-    ${({ theme }) => theme.mixins.boxShadow};
     display: block;
     position: relative;
     width: 100%;
     border-radius: var(--border-radius);
-    //background-color: var(--lightest-mimir-green);
-    background-color: white;
+    
+    // Floating animation
+    animation: float 6s ease-in-out infinite;
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
     &:hover,
     &:focus {
       outline: 0;
 
-      &:after {
-        top: 15px;
-        left: 15px;
-      }
-
       .img {
         filter: none;
         mix-blend-mode: normal;
+        transform: scale(1.02);
       }
     }
 
     .img {
       position: relative;
       border-radius: var(--border-radius);
-      mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1);
+      // Clean, no heavy tint
       transition: var(--transition);
+      box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
     }
-
-    &:before,
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: var(--border-radius);
-      transition: var(--transition);
+    
+    // Decorative border ring
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: var(--border-radius);
+        border: 2px solid var(--primary);
+        top: 15px;
+        left: 15px;
+        z-index: -1;
+        transition: var(--transition);
     }
-
-    &:before {
-      top: 0;
-      left: 0;
-      background-color: var(--mimir-green);
-      mix-blend-mode: screen;
-    }
-
-    &:after {
-      border: 2px solid var(--lightest-mimir-green);
-      top: 20px;
-      left: 20px;
-      z-index: -1;
+    
+    &:hover::after {
+        top: 10px;
+        left: 10px;
     }
   }
 `;
@@ -141,7 +144,7 @@ const About = () => {
     'Git & GitHub',
     'REST APIs'
   ];
-  
+
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -149,26 +152,26 @@ const About = () => {
 
       <div className="inner">
         <StyledText>
-        <div>
-      
-        <p>
-  I like building systems that work reliably and are straightforward to use, whether that is a small web app, a backend service, or a tool that automates something repetitive.
-</p>
+          <div>
 
-<p>
-  I study Computer Science at{' '}
-  <a href="https://www.elte.hu/en" target="_blank"> Eötvös Loránd University (ELTE)</a> in Budapest, where I focus on software engineering, data science, and applied AI. Most of my projects sit somewhere between backend development and data-heavy applications.
-</p>
+            <p>
+              I like building systems that work reliably and are straightforward to use, whether that is a small web app, a backend service, or a tool that automates something repetitive.
+            </p>
 
-<p>
-  I have worked with technologies like React, Laravel, Flask, FastAPI, and MongoDB, and on the data side I use Python, pandas, NumPy, and scikit-learn for analysis and ML experiments. I have built things like learning platforms, small intelligent assistants, and tools that process and interpret real-world data.
-</p>
+            <p>
+              I study Computer Science at{' '}
+              <a href="https://www.elte.hu/en" target="_blank"> Eötvös Loránd University (ELTE)</a> in Budapest, where I focus on software engineering, data science, and applied AI. Most of my projects sit somewhere between backend development and data-heavy applications.
+            </p>
 
-<p>
-  I like clear problems, direct feedback, and building things that are actually used, not just nice to show in a presentation.
-</p>
-</div>
-<p>Here are a few technologies and areas I’ve been working with or exploring recently:</p>
+            <p>
+              I have worked with technologies like React, Laravel, Flask, FastAPI, and MongoDB, and on the data side I use Python, pandas, NumPy, and scikit-learn for analysis and ML experiments. I have built things like learning platforms, small intelligent assistants, and tools that process and interpret real-world data.
+            </p>
+
+            <p>
+              I like clear problems, direct feedback, and building things that are actually used, not just nice to show in a presentation.
+            </p>
+          </div>
+          <p>Here are a few technologies and areas I’ve been working with or exploring recently:</p>
 
           <ul className="skills-list">
             {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}

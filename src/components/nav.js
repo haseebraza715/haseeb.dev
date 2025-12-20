@@ -17,12 +17,13 @@ const StyledHeader = styled.header`
   padding: 0px 50px;
   width: 100%;
   height: var(--nav-height);
-  background-color: rgba(5, 16, 29, 0.6); /* --dark-mimir-green with opacity */
-  backdrop-filter: blur(10px);
-  transition: var(--transition);
+  background-color: rgba(10, 14, 39, 0.85);
+  backdrop-filter: blur(12px) saturate(180%);
+  transition: var(--transition-smooth);
   filter: none !important;
   pointer-events: auto !important;
   user-select: auto !important;
+  border-bottom: 1px solid rgba(160, 174, 192, 0.1);
 
   @media (max-width: 1080px) {
     padding: 0 40px;
@@ -38,8 +39,8 @@ const StyledHeader = styled.header`
     css`
       height: var(--nav-scroll-height);
       transform: translateY(0px);
-      background-color: rgba(10, 36, 67, 0.7); /* --dark-mimir-green-og */
-      box-shadow: 0 10px 30px -10px var(--mimir-green-shadow);
+      background-color: rgba(10, 14, 39, 0.95);
+      box-shadow: var(--shadow-main);
     `};
 
     ${props =>
@@ -48,7 +49,7 @@ const StyledHeader = styled.header`
     css`
       height: var(--nav-scroll-height);
       transform: translateY(calc(var(--nav-scroll-height) * -1));
-      box-shadow: 0 10px 30px -10px var(--mimir-green-shadow);
+      box-shadow: var(--shadow-main);
     `};
   }
 `;
@@ -57,7 +58,7 @@ const StyledNav = styled.nav`
   ${({ theme }) => theme.mixins.flexBetween};
   position: relative;
   width: 100%;
-  color: var(--mimir-white);
+  color: var(--text-primary);
   font-family: var(--font-mono);
   counter-reset: item 0;
   z-index: 12;
@@ -66,20 +67,26 @@ const StyledNav = styled.nav`
     ${({ theme }) => theme.mixins.flexCenter};
 
     a {
-      color: var(--green);
+      color: var(--primary);
       width: 42px;
       height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       &:hover,
       &:focus {
+        outline: none;
+        
         svg {
-          fill: var(--green-tint);
+          transform: scale(1.05);
+          filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.5));
         }
       }
 
       svg {
         fill: none;
-        transition: var(--transition);
+        transition: all 0.25s ease;
         user-select: none;
       }
     }
@@ -108,18 +115,18 @@ const StyledLinks = styled.div`
 
       a {
         padding: 10px;
-        color: var(--mimir-white);
+        color: var(--text-primary);
         transition: color var(--transition);
 
         &:hover,
         &:focus {
-          color: var(--green);
+          color: var(--primary);
         }
 
         &:before {
           content: '0' counter(item) '.';
           margin-right: 5px;
-          color: var(--lightest-mimir-green);
+          color: var(--primary);
           font-size: var(--fz-xxs);
           text-align: right;
         }

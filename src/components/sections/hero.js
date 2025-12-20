@@ -9,9 +9,8 @@ const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
   align-items: flex-start;
-  width: 100%;
   min-height: 100vh;
-  padding: 0 0 0 4px;
+  padding: 0;
 
   @media (max-width: 768px) {
     min-height: auto;
@@ -22,13 +21,9 @@ const StyledHeroSection = styled.section`
     padding: 80px 0 40px;
   }
 
-  @media (max-width: 480px) and (min-height: 700px) {
-    padding-bottom: 10vh;
-  }
-
   h1 {
-    margin: 0 0 30px 4px;
-    color: var(--lightest-mimir-green);
+    margin: 0 0 20px 4px;
+    color: var(--primary);
     font-family: var(--font-mono);
     font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
     font-weight: 400;
@@ -38,54 +33,73 @@ const StyledHeroSection = styled.section`
     }
   }
 
-  .big-heading {
+  h2 {
+    margin: 0;
     font-size: clamp(40px, 8vw, 80px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    // Charming Slate-to-Teal Gradient
+    background: linear-gradient(90deg, var(--text-primary) 10%, var(--primary) 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
     line-height: 1.1;
-  }
-
-  @media (max-width: 600px) {
-    .big-heading {
-      font-size: clamp(32px, 10vw, 64px);
-      line-height: 1.15;
+    
+    // Fallback
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      color: var(--text-primary);
+      background: none;
     }
   }
 
   h3 {
-    margin-top: 10px;
-    color: var(--light-mimir-green);
-    line-height: 1.05;
-
-    @media (max-width: 600px) {
-      font-size: clamp(var(--fz-lg), 5vw, var(--fz-xl));
-      line-height: 1.2;
-    }
+    margin: 5px 0 0; // tighter spacing
+    color: var(--text-tertiary);
+    line-height: 0.9;
+    font-size: clamp(30px, 7vw, 70px);
+    font-weight: 700;
   }
 
   p {
-    margin: 20px 0 0;
+    margin: 30px 0 0;
     max-width: 540px;
-    font-size: clamp(var(--fz-md), 3.2vw, var(--fz-lg));
-    line-height: 1.7;
-
-    @media (max-width: 768px) {
-      max-width: 100%;
-    }
-
-    @media (min-width: 1024px) {
-      max-width: 620px;
-      font-size: var(--fz-xl);
-      line-height: 1.8;
+    font-size: var(--fz-lg);
+    line-height: 1.6;
+    color: var(--text-secondary);
+    
+    // Make link pop
+    a {
+      color: var(--primary);
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: var(--primary);
+        transition: width 0.3s ease;
+      }
+      &:hover::after {
+        width: 100%;
+      }
     }
   }
 
   .email-link {
     ${({ theme }) => theme.mixins.bigButton};
     margin-top: 50px;
+    display: inline-block; // Ensure it doesn't overlap
+    text-align: center;
 
     @media (max-width: 600px) {
-      width: 100%;
-      text-align: center;
-      margin-top: 35px;
+      margin-top: 30px;
+      display: block; // Stack on small screens
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 `;
@@ -104,14 +118,13 @@ const Hero = () => {
   }, []);
 
   const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Haseeb Raza.</h2>;
-  const three = <h3 className="big-heading">Build cool things with Web tech and AI.</h3>;
+  const two = <h2>Haseeb Raza.</h2>;
+  const three = <h3>Build cool things with Web and AI.</h3>;
   const four = (
     <>
-  <p> I’m a motivated computer science student currently studying at <a href="https://www.elte.hu/en" target="_blank" rel="noreferrer"> Eötvös Loránd University </a> in Budapest. I focus on advancing research in artificial intelligence and machine learning, with a particular interest in how intelligent systems can move beyond basic execution. My work explores models that can learn, adapt, and scale reliably</p>
-
-
-
+      <p>
+        I’m a Computer Science student at <a href="https://www.elte.hu/en" target="_blank" rel="noreferrer">ELTE</a> in Budapest, focused on advancing AI and Machine Learning. I build intelligent systems that learn, adapt, and scale reliably beyond basic execution.
+      </p>
     </>
   );
   const five = (

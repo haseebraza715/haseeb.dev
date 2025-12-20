@@ -46,7 +46,7 @@ const StyledHamburgerButton = styled.button`
     width: var(--hamburger-width);
     height: 2px;
     border-radius: var(--border-radius);
-    background-color: var(--lightest-mimir-green);
+    background-color: var(--primary);
     transition-duration: 0.22s;
     transition-property: transform;
     transition-delay: ${props => (props.menuOpen ? `0.12s` : `0s`)};
@@ -64,7 +64,7 @@ const StyledHamburgerButton = styled.button`
       width: var(--hamburger-width);
       height: 2px;
       border-radius: 4px;
-      background-color: var(--lightest-mimir-green);
+      background-color: var(--primary);
       transition-timing-function: ease;
       transition-duration: 0.15s;
       transition-property: transform;
@@ -98,8 +98,8 @@ const StyledSidebar = styled.aside`
     width: min(75vw, 400px);
     height: 100vh;
     outline: 0;
-    background-color: var(--light-navy);
-    box-shadow: -10px 0px 30px -15px var(--mimir-green-shadow);
+    background-color: var(--bg-section);
+    box-shadow: -10px 0px 30px -15px rgba(2, 12, 27, 0.7);
     z-index: 9;
     transform: translateX(${props => (props.menuOpen ? 0 : 100)}vw);
     visibility: ${props => (props.menuOpen ? 'visible' : 'hidden')};
@@ -110,7 +110,7 @@ const StyledSidebar = styled.aside`
     ${({ theme }) => theme.mixins.flexBetween};
     width: 100%;
     flex-direction: column;
-    color: var(--lightest-slate);
+    color: var(--text-primary);
     font-family: var(--font-mono);
     text-align: center;
   }
@@ -135,7 +135,7 @@ const StyledSidebar = styled.aside`
         content: '0' counter(item) '.';
         display: block;
         margin-bottom: 5px;
-        color: var(--lightest-mimir-green);
+        color: var(--primary);
         font-size: var(--fz-sm);
       }
     }

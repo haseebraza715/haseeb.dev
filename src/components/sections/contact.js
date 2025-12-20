@@ -6,17 +6,17 @@ import { usePrefersReducedMotion } from '@hooks';
 
 const StyledContactSection = styled.section`
   max-width: 600px;
-  margin: 0 auto 100px;
+  margin: 0 auto 40px;
   text-align: center;
 
   @media (max-width: 768px) {
-    margin: 0 auto 50px;
+    margin: 0 auto 30px;
   }
 
   .overline {
     display: block;
     margin-bottom: 20px;
-    color: var(--lightest-mimir-green);
+    color: var(--primary);
     font-family: var(--font-mono);
     font-size: var(--fz-md);
     font-weight: 400;
@@ -33,11 +33,25 @@ const StyledContactSection = styled.section`
 
   .title {
     font-size: clamp(40px, 5vw, 60px);
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+
+  p {
+    margin: 0 auto 30px; // Centered text with space
+    max-width: 500px;
   }
 
   .email-link {
     ${({ theme }) => theme.mixins.bigButton};
     margin-top: 50px;
+    padding: 1.25rem 3rem;
+    font-size: var(--fz-md);
+    
+    &:hover {
+        background-color: var(--primary-tint);
+        transform: translateY(-3px);
+    }
   }
 `;
 
@@ -60,9 +74,9 @@ const Contact = () => {
       <h2 className="title">Get In Touch</h2>
 
       <p>
-      I'm always on the lookout for exciting and meaningful projects—and I enjoy a good conversation, too. 
-      Whether you're reaching out with an opportunity, a collaboration idea, a question, or just to say hello, 
-      feel free to drop me a message. I'll do my best to respond promptly!
+        I'm always on the lookout for exciting and meaningful projects—and I enjoy a good conversation, too.
+        Whether you're reaching out with an opportunity, a collaboration idea, a question, or just to say hello,
+        feel free to drop me a message. I'll do my best to respond promptly!
       </p>
 
       <a className="email-link" href={`mailto:${email}`}>

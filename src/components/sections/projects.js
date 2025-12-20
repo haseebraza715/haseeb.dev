@@ -14,13 +14,13 @@ const StyledProjectsSection = styled.section`
 
   h2 {
     font-size: clamp(24px, 5vw, var(--fz-heading));
-    color: var(--light-mimir-green);
+    color: var(--text-primary);
   }
 
   .archive-link {
     font-family: var(--font-mono);
     font-size: var(--fz-sm);
-    color: var(--lightest-mimir-green);
+    color: var(--primary);
     &:after {
       bottom: 0.1em;
     }
@@ -34,13 +34,23 @@ const StyledProjectsSection = styled.section`
   .projects-grid {
     ${({ theme }) => theme.mixins.resetList};
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr); // Force 3 columns
     grid-gap: 15px;
     position: relative;
     margin-top: 50px;
 
     @media (max-width: 1080px) {
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-gap: 12px;
+    }
+
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+      grid-gap: 15px;
     }
   }
 
@@ -60,7 +70,12 @@ const StyledProject = styled.li`
     &:focus-within {
       .project-inner {
         transform: translateY(-7px);
-        background-color: var(--mimir-green-tint);
+        background-color: var(--bg-elevated);
+        box-shadow: 0 15px 30px -15px rgba(16, 185, 129, 0.2); // Emerald glow
+        border-color: var(--primary);
+      }
+      .project-top .folder {
+        color: var(--primary);
       }
     }
   }
@@ -79,7 +94,7 @@ const StyledProject = styled.li`
     height: 100%;
     padding: 2rem 1.75rem;
     border-radius: var(--border-radius);
-    background-color: var(--dark-mimir-green-og);
+    background-color: var(--bg-section);
     transition: var(--transition);
     overflow: auto;
   }
@@ -89,7 +104,7 @@ const StyledProject = styled.li`
     margin-bottom: 35px;
 
     .folder {
-      color: var(--lightest-mimir-green);
+      color: var(--primary);
       svg {
         width: 40px;
         height: 40px;
@@ -100,7 +115,7 @@ const StyledProject = styled.li`
       display: flex;
       align-items: center;
       margin-right: -10px;
-      color: var(--light-mimir-green);
+      color: var(--text-primary);
 
       a {
         ${({ theme }) => theme.mixins.flexCenter};
@@ -124,7 +139,7 @@ const StyledProject = styled.li`
 
   .project-title {
     margin: 0 0 10px;
-    color: var(--lightest-mimir-green);
+    color: var(--text-primary);
     font-size: var(--fz-xxl);
 
     a {
@@ -143,13 +158,13 @@ const StyledProject = styled.li`
 
       &:hover,
       &:focus {
-        color: var(--light-mimir-green);
+        color: var(--primary);
       }
     }
   }
 
   .project-description {
-    color: var(--light-mimir-green);
+    color: var(--text-secondary);
     font-size: 17px;
 
     a {
@@ -219,7 +234,7 @@ const Projects = () => {
     revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }, []);
 
-  const GRID_LIMIT = 6;
+  const GRID_LIMIT = 9; // Grid of 3x3
   const projects = data.projects.edges.filter(({ node }) => node);
   const firstSix = projects.slice(0, GRID_LIMIT);
   const projectsToShow = showMore ? projects : firstSix;

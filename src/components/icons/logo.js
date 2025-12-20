@@ -1,42 +1,55 @@
 import React from 'react';
 
-const IconLoader = () => (
-  <svg id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-    <title>Loader Logo</title>
+const IconLogo = () => (
+  <svg
+    id="logo"
+    xmlns="http://www.w3.org/2000/svg"
+    role="img"
+    viewBox="0 0 100 100"
+  >
+    <title>Logo</title>
     <defs>
-      {/* Gradient for the hexagon stroke */}
-      <linearGradient id="hexGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#3A9188" />
-        <stop offset="100%" stopColor="#50C9CE" />
-      </linearGradient>
-      {/* Filter for subtle text shadow */}
-      <filter id="textShadow">
-        <feDropShadow dx="0" dy="2" stdDeviation="1" floodColor="#50C9CE" />
+      {/* Corner glow effect */}
+      <filter id="cornerGlow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+        <feComponentTransfer in="blur" result="glow">
+          <feFuncA type="linear" slope="0.8" />
+        </feComponentTransfer>
+        <feMerge>
+          <feMergeNode in="glow" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
       </filter>
     </defs>
-    <g>
-      <text
-        x="50%"
-        y="52%"
-        textAnchor="middle"
-        fill="#3A9188"
-        fontSize="50"
-        fontFamily="var(--font-serif)"
-        dy=".3em"
-        filter="url(#textShadow)"
-      >
-        H
-      </text>
-      <path
-        fill="none"
-        stroke="url(#hexGradient)"
-        strokeWidth="5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M50,5 L11,27 L11,72 L50,95 L89,73 L89,28 Z"
-      />
-    </g>
+
+    {/* Main hexagon with corner glow */}
+    <path
+      fill="none"
+      stroke="#10b981"
+      strokeWidth="3"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M50,5 L11,27 L11,72 L50,95 L89,73 L89,28 Z"
+      filter="url(#cornerGlow)"
+    />
+
+    {/* Bright letter H */}
+    <text
+      x="50"
+      y="52"
+      textAnchor="middle"
+      fill="#34d399"
+      fontSize="52"
+      fontFamily="Poppins, sans-serif"
+      fontWeight="700"
+      dy=".35em"
+      style={{
+        filter: 'drop-shadow(0 0 8px rgba(52, 211, 153, 0.5))'
+      }}
+    >
+      H
+    </text>
   </svg>
 );
 
-export default IconLoader;
+export default IconLogo;

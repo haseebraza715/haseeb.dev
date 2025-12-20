@@ -11,7 +11,7 @@ const StyledLoader = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: #0a192f;
+  background: #0a0e27;
   display: flex;
   align-items: center;
   justify-content: center;

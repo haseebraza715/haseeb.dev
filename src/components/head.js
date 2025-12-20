@@ -44,6 +44,11 @@ const Head = ({ title, description, image }) => {
     <Helmet title={title} defaultTitle={seo.title} titleTemplate={`%s | ${defaultTitle}`}>
       <html lang="en" />
 
+      {/* Google Fonts - Poppins & Fira Code */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet" />
+
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
 
