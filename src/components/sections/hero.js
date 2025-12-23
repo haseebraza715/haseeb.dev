@@ -13,7 +13,6 @@ const StyledHeroSection = styled.section`
   padding: 0;
 
   @media (max-width: 768px) {
-    min-height: auto;
     padding: 100px 0 60px;
   }
 
